@@ -1,0 +1,57 @@
+@import '../../styles/variables.scss';
+
+.modalWindow {
+  position: absolute;
+  top: 80px;
+  right: -164px;
+  width: 240px;
+  height: 104px;
+  filter: drop-shadow(0px 4px 12px rgba(0, 0, 0, 0.15));
+  background: #ffffff;
+  &:before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: -16px;
+    border: 8px solid transparent;
+    border-right-color: #fff;
+  }
+  &__container {
+    padding: 12px 16px;
+  }
+  &__header {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 13px;
+  }
+  &__img {
+    margin: 3px 9px 0 0;
+  }
+  &__title {
+    font-family: $fontFamilyRoboto;
+    font-size: 14px;
+    color: #595959;
+  }
+  &__buttons {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
+.buttonModal {
+  font-family: $fontFamilyRoboto;
+  font-size: 14px;
+  border-radius: 4px;
+  padding: 1px 8px;
+  cursor: pointer;
+  &__no {
+    color: #595959;
+    background: $colorWhite;
+    border: 1px solid #d9d9d9;
+    margin-right: 8px;
+  }
+  &__yes {
+    border: 1px solid $colorBlue;
+    background: $colorBlue;
+    color: $colorWhite;
+  }
+}

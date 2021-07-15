@@ -1,0 +1,115 @@
+@import '../../styles/variables.scss';
+
+.createError {
+  text-align: center;
+  font-family: $fontFamilyRoboto;
+  font-size: 16px;
+  color: $colorRed;
+  padding: 10px 0 0 0;
+}
+
+.createSuccess {
+  text-align: center;
+  font-family: $fontFamilyRoboto;
+  font-size: 16px;
+  color: $colorGreen;
+  padding: 10px 40px;
+}
+
+.regForm {
+  margin: 0 auto;
+  width: 374px;
+  height: 100%;
+  background: $colorWhite;
+  border: 1px solid #d9d9d9;
+  box-shadow: 0px 22px 106px rgba(0, 0, 0, 0.07),
+    0px 9.19107px 44.2843px rgba(0, 0, 0, 0.0503198),
+    0px 4.91399px 23.6765px rgba(0, 0, 0, 0.0417275),
+    0px 2.75474px 13.2728px rgba(0, 0, 0, 0.035),
+    0px 1.46302px 7.04911px rgba(0, 0, 0, 0.0282725),
+    0px 0.608796px 2.93329px rgba(0, 0, 0, 0.0196802);
+  border-radius: 6px;
+  margin-top: 59px;
+
+  &__container {
+    padding: 0 32px 0 32px;
+  }
+
+  &__title {
+    font-family: $fontFamilyRoboto;
+    font-weight: 500;
+    font-size: 20px;
+    text-align: center;
+    color: #262626;
+    margin: 21px 0px;
+  }
+}
+.form {
+  display: flex;
+  flex-direction: column;
+  &__line {
+    margin-top: 13px;
+    border: 1px solid #e8e8e8;
+  }
+  &__checkbox {
+    display: flex;
+    align-items: baseline;
+  }
+
+  &__submit {
+    font-family: $fontFamilyRoboto;
+    font-size: 16px;
+    line-height: 24px;
+    color: $colorWhite;
+    background: $colorBlue;
+    border: 1px solid $colorBlue;
+    border-radius: 4px;
+    margin: 10px 0px;
+    padding: 8px 16px;
+    cursor: pointer;
+  }
+  &__errorMessage {
+    font-family: $fontFamilyRoboto;
+    font-size: 14px;
+    line-height: 22px;
+    color: $colorRed;
+    margin-top: -13px;
+    margin-bottom: 10px;
+  }
+}
+
+.footer {
+  display: flex;
+  justify-content: center;
+  &__text {
+    font-family: $fontFamilyRoboto;
+    font-size: 12px;
+    line-height: 20px;
+    text-align: center;
+    color: #8c8c8c;
+    margin: 8px 2px 48px 0;
+  }
+  &__link {
+    color: $colorBlue;
+  }
+}
+
+.checkbox {
+  &__input {
+    margin-top: 14px;
+    margin-right: 12px;
+    cursor: pointer;
+  }
+  &__label {
+    font-family: $fontFamilyRoboto;
+    font-size: 14px;
+    color: #595959;
+    margin-top: 12px;
+  }
+}
+.errorCheckbox {
+  font-family: $fontFamilyRoboto;
+  font-size: 14px;
+  margin-top: 12px;
+  color: $colorRed !important;
+}

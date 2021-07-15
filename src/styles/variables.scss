@@ -1,0 +1,12 @@
+$fontFamilyRoboto: Roboto;
+$fontFamilyInter: Inter;
+$colorRed: red;
+$colorWhite: #ffffff;
+$colorBlue: #1890ff;
+$colorGreen: #52c41a;
+
+@mixin displayFlex() {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
