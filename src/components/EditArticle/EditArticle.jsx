@@ -1,7 +1,9 @@
+/* eslint-disable array-callback-return */
 import React from 'react';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { Redirect } from 'react-router-dom';
+import { v4 } from 'uuid';
 import CreateEditForm from '../CreateEditForm';
 import LoadingIndicator from '../LoadingIndicator';
 import BlogService from '../../services/BlogService';
@@ -48,7 +50,10 @@ const EditArticle = ({ slug }) => {
     title: articles.title,
     shortDescription: articles.description,
     text: articles.body,
-    tagList: articles.tagList,
+    tagList: articles.tagList.map((tag) => ({
+      id: v4(),
+      text: tag,
+    })),
   };
 
   if (successfulCreateArticle) {
