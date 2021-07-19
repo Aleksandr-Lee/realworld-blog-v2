@@ -17,6 +17,8 @@ import { actionGetUser } from '../../redux/actions/users';
 import classes from './App.module.scss';
 
 const App = () => {
+
+	const dfg;
   const dispatch = useDispatch();
   const isAuth = useSelector((state) => state.usersReducer.isAuth);
   useEffect(() => {
