@@ -63,7 +63,6 @@ const CreateEditForm = ({ title, submit, valueInput }) => {
       </button>
     </div>
   ));
-
   return (
     <div className={classes.createEditArticleForm}>
       <div className={classes.createEditArticleForm__container}>
