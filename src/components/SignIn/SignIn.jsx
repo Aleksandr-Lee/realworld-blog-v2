@@ -1,5 +1,4 @@
-/* eslint-disable react/prop-types */
-import React from 'react';
+import React, { useState } from 'react';
 import { Link, Redirect } from 'react-router-dom';
 import { useForm } from 'react-hook-form';
 import { useDispatch, useSelector } from 'react-redux';
@@ -14,6 +13,7 @@ import {
 import classes from './SignIn.module.scss';
 
 const SignIn = () => {
+  const [blockForm, setBlockForm] = useState(false);
   const dispatch = useDispatch();
   const successfulLogin = useSelector(
     (state) => state.usersReducer.successfulLogin
@@ -24,13 +24,16 @@ const SignIn = () => {
     formState: { errors },
   } = useForm();
   const onSubmit = ({ emailAddress, password }) => {
+    setBlockForm(true);
     new BlogService()
       .getUsers(emailAddress, password)
       .then((users) => {
         if (users.errors) {
           dispatch(actionSuccessfulLogin(users));
+          setBlockForm(false);
         } else {
           dispatch(actionSuccessfulLogin(true));
+          setBlockForm(false);
           dispatch(actionGetUser(users));
           localStorage.setItem('token', JSON.stringify(users.user.token));
         }
@@ -63,39 +66,47 @@ const SignIn = () => {
         {loginFailed}
         <div className={classes.loginForm__container}>
           <h1 className={classes.loginForm__title}>Sign In</h1>
-          <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
-            <Inputs
-              label="Email address"
-              type="text"
-              placeholder="Email address"
-              id="emailAddress"
-              register={register}
-              required
-              errors={errors}
-              errorObject={[
-                { typeError: 'required', message: 'This is a required field' },
-                {
-                  typeError: 'pattern',
-                  message: 'Invalid email address',
-                },
-              ]}
-              pattern={/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,6}$/}
-            />
-            <Inputs
-              label="Password"
-              type="password"
-              placeholder="Password"
-              id="password"
-              register={register}
-              required
-              errors={errors}
-              errorObject={[
-                { typeError: 'required', message: 'This is a required field' },
-              ]}
-            />
-            <button className={classes.form__submit} type="submit">
-              Login
-            </button>
+          <form onSubmit={handleSubmit(onSubmit)}>
+            <fieldset className={classes.form} disabled={blockForm}>
+              <Inputs
+                label="Email address"
+                type="text"
+                placeholder="Email address"
+                id="emailAddress"
+                register={register}
+                required
+                errors={errors}
+                errorObject={[
+                  {
+                    typeError: 'required',
+                    message: 'This is a required field',
+                  },
+                  {
+                    typeError: 'pattern',
+                    message: 'Invalid email address',
+                  },
+                ]}
+                pattern={/^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,6}$/}
+              />
+              <Inputs
+                label="Password"
+                type="password"
+                placeholder="Password"
+                id="password"
+                register={register}
+                required
+                errors={errors}
+                errorObject={[
+                  {
+                    typeError: 'required',
+                    message: 'This is a required field',
+                  },
+                ]}
+              />
+              <button className={classes.form__submit} type="submit">
+                Login
+              </button>
+            </fieldset>
           </form>
           <div className={classes.footer}>
             <span className={classes.footer__text}>Don’t have an account?</span>

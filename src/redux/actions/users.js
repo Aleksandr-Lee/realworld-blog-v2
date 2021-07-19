@@ -1,4 +1,3 @@
-/* eslint-disable import/prefer-default-export */
 import actionTypes from '../actionsTypes';
 
 export const actionGetUser = (users) => ({

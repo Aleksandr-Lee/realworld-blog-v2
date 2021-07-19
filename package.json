@@ -26,7 +26,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-	 "lint": "eslint ./src",
+    "lint": "eslint ./src",
     "lint:fix": "eslint ./src --fix --color",
     "format": "prettier ./src --write"
   },
@@ -63,14 +63,14 @@
     "prettier": "^2.3.2"
   },
   "husky": {
-	"hooks": {
-	  "pre-commit": "lint-staged"
-	}
- },
- "lint-staged": {
-	"*.{js,jsx}": [
-	  "npm run lint:fix",
-	  "npm run format"
-	]
- }
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "*.{js,jsx}": [
+      "npm run lint:fix",
+      "npm run format"
+    ]
+  }
 }

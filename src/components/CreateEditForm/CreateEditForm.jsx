@@ -28,7 +28,6 @@ const CreateEditForm = ({ title, submit, valueInput }) => {
   };
 
   const inputValueTag = (event, index) => {
-    event.preventDefault();
     const newTags = [...tags];
     newTags[index] = event.target.value;
     setTags(newTags);
