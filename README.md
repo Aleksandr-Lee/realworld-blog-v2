@@ -1,1 +1,1 @@
-https://realworld-blog-v2.vercel.app
+ https://realworld-blog-v2-aleksandr-lee.vercel.app
