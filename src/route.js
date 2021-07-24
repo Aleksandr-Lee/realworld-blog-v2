@@ -6,6 +6,7 @@ const route = {
   signUp: '/sign-up',
   profile: '/profile',
   newArticle: '/new-article',
+  myArticles: '/my-articles',
   edit: '/edit',
   slug: ':slug',
 };

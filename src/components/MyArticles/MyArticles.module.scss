@@ -1,0 +1,11 @@
+@import '../../styles/variables.scss';
+
+.noArticles {
+  font-family: $fontFamilyRoboto;
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 28px;
+  text-align: center;
+  color: rgb(10, 201, 214);
+  margin-top: 150px;
+}

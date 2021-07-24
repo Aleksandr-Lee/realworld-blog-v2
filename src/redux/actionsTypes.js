@@ -1,4 +1,5 @@
 const actionTypes = {
+  getMyArticles: 'GET_MY_ARTICLES_LIST',
   getArticlesList: 'GET_ARTICLES_LIST',
   getArticles: 'GET_ARTICLES',
   completeDownload: 'COMPLETE_DOWNLOAD',

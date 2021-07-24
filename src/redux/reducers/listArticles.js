@@ -1,6 +1,7 @@
 import actionTypes from '../actionsTypes';
 
 const initialState = {
+  myArticles: [],
   articlesList: [],
   articles: null,
   completeDownload: false,
@@ -16,6 +17,12 @@ const initialState = {
 
 const articlesReducer = (state = initialState, action) => {
   switch (action.type) {
+    case actionTypes.getMyArticles:
+      return {
+        ...state,
+        myArticles: action.myArticles,
+        completeDownload: true,
+      };
     case actionTypes.getArticlesList:
       return {
         ...state,
@@ -31,6 +38,7 @@ const articlesReducer = (state = initialState, action) => {
     case actionTypes.completeDownload:
       return {
         ...state,
+        myArticles: [],
         articlesList: [],
         completeDownload: false,
       };

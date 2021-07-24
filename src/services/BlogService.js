@@ -44,6 +44,16 @@ export default class BlogService {
     return res;
   }
 
+  async myArticles(users) {
+    const url = `${this.apiBase}articles?author=${users}`;
+    const request = {
+      method: 'GET',
+      headers: this.postRequest(),
+    };
+    const res = await this.getResource(url, request);
+    return res;
+  }
+
   async setUserRegistration(username, email, password) {
     const url = `${this.apiBase}users`;
     const request = {

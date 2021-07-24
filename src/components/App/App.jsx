@@ -10,6 +10,7 @@ import SignIn from '../SignIn';
 import SignUp from '../SignUp';
 import Profile from '../Profile';
 import CreateArticle from '../CreateArticle';
+import MyArticles from '../MyArticles';
 import EditArticle from '../EditArticle';
 import PrivateRoute from '../PrivateRoute';
 import route from '../../route';
@@ -45,6 +46,9 @@ const App = () => {
           {!isAuth && <Route path={route.signIn} component={SignIn} exact />}
           {!isAuth && <Route path={route.signUp} component={SignUp} exact />}
           {isAuth && <Route path={route.profile} component={Profile} exact />}
+          {isAuth && (
+            <Route path={route.myArticles} component={MyArticles} exact />
+          )}
           <PrivateRoute
             path={route.newArticle}
             component={CreateArticle}

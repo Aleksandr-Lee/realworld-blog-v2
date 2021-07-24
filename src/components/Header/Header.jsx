@@ -19,7 +19,16 @@ const Header = () => {
         </Link>
         {isAuth ? (
           <div className={classes.header__user}>
-            <Link to={route.newArticle} className={classes.header__btnArticle}>
+            <Link
+              to={route.myArticles}
+              className={`${classes.btnArticle} ${classes.btnArticle__myArticles}`}
+            >
+              My articles
+            </Link>
+            <Link
+              to={route.newArticle}
+              className={`${classes.btnArticle} ${classes.btnArticle__newArticles}`}
+            >
               Create article
             </Link>
 

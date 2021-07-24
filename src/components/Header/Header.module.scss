@@ -23,21 +23,7 @@
     display: flex;
     align-items: center;
   }
-  &__btnArticle {
-    border: 1px solid $colorGreen;
-    border-radius: 5px;
-    font-family: $fontFamilyInter;
-    font-size: 14px;
-    color: $colorGreen;
-    background: $colorWhite;
-    padding: 5px 10px;
-    margin-right: 26px;
-    cursor: pointer;
-    &:hover {
-      color: #ffffff;
-      background: $colorGreen;
-    }
-  }
+
   &__userName {
     margin-right: 13px;
     font-family: $fontFamilyInter;
@@ -77,6 +63,33 @@
     background: $colorWhite;
     margin-right: 30px;
     padding: 13px 18px;
+  }
+}
+
+.btnArticle {
+  border-radius: 5px;
+  font-family: $fontFamilyInter;
+  font-size: 14px;
+
+  background: $colorWhite;
+  padding: 5px 10px;
+  margin-right: 26px;
+  cursor: pointer;
+  &__myArticles {
+    border: 1px solid rgb(10, 201, 214);
+    color: rgb(10, 201, 214);
+    &:hover {
+      color: #ffffff;
+      background: rgb(10, 201, 214);
+    }
+  }
+  &__newArticles {
+    border: 1px solid $colorGreen;
+    color: $colorGreen;
+    &:hover {
+      color: #ffffff;
+      background: $colorGreen;
+    }
   }
 }
 

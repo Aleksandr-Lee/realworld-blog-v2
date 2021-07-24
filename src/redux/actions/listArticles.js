@@ -1,5 +1,10 @@
 import actionTypes from '../actionsTypes';
 
+export const actionMyArticles = (myArticles) => ({
+  type: actionTypes.getMyArticles,
+  myArticles,
+});
+
 export const actionListArticles = (articlesList) => ({
   type: actionTypes.getArticlesList,
   articlesList,
